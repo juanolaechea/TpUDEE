@@ -15,7 +15,6 @@ import javax.persistence.*;
 public abstract class User
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_name")
     private String userName;
 
