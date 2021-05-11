@@ -24,10 +24,14 @@ public class AddressController {
     public void addAddress(@RequestBody Address newAddress){
         addressService.addAddress(newAddress);
     }
-    @GetMapping({"idAdress"})
+    @GetMapping("/{idAddress}")
     public Address getAddressById(@PathVariable Integer IdAddress){
 
         return addressService.getAddressById(IdAddress);
+    }
+    @DeleteMapping("/{idAddress}")
+    public void deleteAddressById(@PathVariable Integer IdAddress){
+        addressService.deleteAddressById(IdAddress);
     }
 
 

@@ -26,4 +26,8 @@ public class AddressService {
         return addressRepository.findById(idAddress)
                 .orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
     }
+
+    public void deleteAddressById(Integer idAddress) {
+        addressRepository.deleteById(idAddress);
+    }
 }

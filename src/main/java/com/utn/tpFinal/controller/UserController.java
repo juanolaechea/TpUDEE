@@ -22,13 +22,12 @@ public class UserController
     public List<User> getAll(){
         return userService.getAll();
     }
-
     @GetMapping("/{userName}")
     public User getUserByName(@PathVariable String userName){
         return userService.getByUserName(userName);
     }
 
-    @DeleteMapping("{username}")
+    @DeleteMapping("/{username}")
     void deletUserByUserName(@PathVariable String userName){
         userService.deleteUser(userName);
     }
