@@ -23,7 +23,7 @@ public class TariffController {
         tariffService.addTariff(newTariff);
     }
 
-    @GetMapping
+    @GetMapping("/{idTariff}")
     public Tariff getTariffById(@PathVariable Integer idTariff){
         return  tariffService.getTariffById(idTariff);
     }
