@@ -11,15 +11,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tariff")
+@Table(name = "Tariff")
 public class Tariff {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column(name = "tariff_id")
+    @Column(name = "id_tariff")
     private Integer tariffIdd;
-    @Column(name ="tariff_name")
+    @Column(name ="name")
     private String tariffName;
-    @Column(name ="tariff_value")
+    @Column(name ="value")
     private Float tariffValue;
 }

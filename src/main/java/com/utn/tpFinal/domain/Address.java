@@ -15,13 +15,13 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "address_id")
+    @Column(name = "id_address")
     private Integer addressId;
 
-    @Column(name ="address_street_Name")
+    @Column(name ="name_address")
     private String streetName;
 
-    @Column(name = "address_street_Number")
+    @Column(name = "number_address")
     private Integer streetNumber;
 
 

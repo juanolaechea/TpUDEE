@@ -20,11 +20,11 @@ public class Residence {
     private Integer recidenceId;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "client_dni")
-    private Client ciente;
+    @JoinColumn(name = "dni_client")
+    private Client client;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "id_address")
     private Address address;
 
     @OneToOne(fetch = FetchType.EAGER)
@@ -32,7 +32,7 @@ public class Residence {
     private Meter meter;
 
     @ManyToOne
-    @JoinColumn(name = "tariff_id")
+    @JoinColumn(name = "id_tariff")
     private Tariff tariff;
 
     @OneToMany(fetch = FetchType.EAGER)

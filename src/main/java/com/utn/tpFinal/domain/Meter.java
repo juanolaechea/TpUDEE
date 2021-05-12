@@ -19,10 +19,10 @@ public class Meter {
     @Column(name = "serial_number")
     private Integer serialNumber;
 
-    @Column(name = "meter_model" )
+    @Column(name = "model" )
     private String meterModel;
 
-    @Column(name = "meter_brand")
+    @Column(name = "brand")
     private String meterBrand;
 
 }

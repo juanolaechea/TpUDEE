@@ -17,11 +17,14 @@ public class Invoice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="invoice_id")
+    @Column(name="id_invoice")
     private Integer invoiceId;
 
     @Column(name="is_paid")
     private Boolean isPaid;
+
+    @Column(name="due_date")
+    private Date duelDate;
 
     @Column(name="first_reading")
     private Float firstReading;
@@ -29,7 +32,7 @@ public class Invoice {
     @Column(name="last_reading")
     private Float lastReading;
 
-    @Column(name="total_consumption_kwh")
+    @Column(name="total_cons_kw")
     private Float totalConsumptionKwh;
 
     @Column(name="initial_date")
