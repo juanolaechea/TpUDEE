@@ -7,26 +7,33 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "meters")
-public class Meter {
+@Table(name = "models")
+public class Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_meter")
-    private Integer meterId;
+    @Column(name = "id_model")
+    private Integer modelId;
 
-    @Column(name = "serial_number")
-    private Integer serialNumber;
+    @Column(name = "model_Name")
+    private String modelName;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="id_model", nullable = false)
+    @JoinColumn(name="id_brand", nullable = false)
     @JsonBackReference
-    private Model model;
+    private Brand brand;
+
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_meter")
+    private List<Meter> meterList;
+
 
 
 }
