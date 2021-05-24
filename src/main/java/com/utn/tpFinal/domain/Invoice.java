@@ -1,6 +1,7 @@
 package com.utn.tpFinal.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -43,6 +44,13 @@ public class Invoice {
 
     @Column(name="total_amount")
     private Float totalAmount;
+
+
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="residence_id", nullable = false)
+    @JsonBackReference
+    private Residence residence;
 
 
 

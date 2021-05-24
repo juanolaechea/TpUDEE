@@ -2,6 +2,7 @@ package com.utn.tpFinal.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,10 +24,14 @@ public class Meter {
     @Column(name = "serial_number")
     private Integer serialNumber;
 
+    @Column(name = "password")
+    private Integer password;
+/*
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_model", nullable = false)
     @JsonBackReference
     private Model model;
-
+*/
 
 }

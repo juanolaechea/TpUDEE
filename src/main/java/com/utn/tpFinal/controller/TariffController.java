@@ -1,5 +1,6 @@
 package com.utn.tpFinal.controller;
 
+import com.utn.tpFinal.domain.PostResponse;
 import com.utn.tpFinal.domain.Tariff;
 import com.utn.tpFinal.service.TariffService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ public class TariffController {
     }
 
     @PostMapping
-    public void addTariff(@RequestBody Tariff newTariff){
-        tariffService.addTariff(newTariff);
+    public PostResponse addTariff(@RequestBody Tariff newTariff){
+        return tariffService.addTariff(newTariff);
     }
 
     @GetMapping("/{idTariff}")

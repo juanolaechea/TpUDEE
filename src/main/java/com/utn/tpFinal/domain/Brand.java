@@ -20,8 +20,8 @@ public class Brand {
     @Column(name = "id_brand")
     private Integer brandId;
 
-    @Column(name = "brand_Name")
-    private String brandName;
+    @Column(name = "brand")
+    private String brand;
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_model")

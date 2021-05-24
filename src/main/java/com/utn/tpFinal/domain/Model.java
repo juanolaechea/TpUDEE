@@ -21,19 +21,22 @@ public class Model {
     @Column(name = "id_model")
     private Integer modelId;
 
-    @Column(name = "model_Name")
-    private String modelName;
+    @Column(name = "model")
+    private String model;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_brand", nullable = false)
     @JsonBackReference
     private Brand brand;
 
+    /*
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_meter")
     private List<Meter> meterList;
 
+
+     */
 
 
 }
