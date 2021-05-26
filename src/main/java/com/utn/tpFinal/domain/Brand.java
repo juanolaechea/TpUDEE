@@ -23,7 +23,11 @@ public class Brand {
     @Column(name = "brand")
     private String brand;
 
-    @OneToMany(fetch = FetchType.LAZY)
+
+
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_model")
     private List<Model> modelList;
+
+
 }

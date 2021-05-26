@@ -2,12 +2,14 @@ package com.utn.tpFinal.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -24,19 +26,18 @@ public class Model {
     @Column(name = "model")
     private String model;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="id_brand", nullable = false)
-    @JsonBackReference
+
+    @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="id_brand")
     private Brand brand;
 
-    /*
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_meter")
     private List<Meter> meterList;
 
 
-     */
+
 
 
 }
