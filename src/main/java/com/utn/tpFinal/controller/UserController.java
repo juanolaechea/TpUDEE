@@ -18,6 +18,8 @@ public class UserController
     public void addUser(@RequestBody User newUser){
         userService.addUser(newUser);
     }
+
+
     @GetMapping
     public List<User> getAll(){
         return userService.getAll();

@@ -21,6 +21,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Users")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class User
 {
     @Id

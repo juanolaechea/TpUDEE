@@ -24,9 +24,8 @@ public class Brand {
     private String brand;
 
 
-
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_model")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "brand", fetch = FetchType.LAZY)
+    //@JoinColumn(name ="brand")
     private List<Model> modelList;
 
 

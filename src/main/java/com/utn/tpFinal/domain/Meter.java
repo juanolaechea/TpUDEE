@@ -28,13 +28,11 @@ public class Meter {
     @Column(name = "password")
     private Integer password;
 
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="id_model")
+    @ManyToOne
+    @JoinColumn(name = "model", nullable = false, updatable = false)
     private Model model;
 
-    @OneToMany(fetch = FetchType.EAGER)
-    @JsonIgnore
-    @JoinColumn(name = "id_measurement")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "meter", fetch = FetchType.LAZY)
     private List<Measurement> measurementList;
 
 
